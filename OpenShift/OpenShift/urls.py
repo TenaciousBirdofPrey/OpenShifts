@@ -36,3 +36,7 @@ urlpatterns = [
 	#not added by me.
     url(r'^admin/', admin.site.urls),
 ]
+
+# Change admin site title
+admin.site.site_header = ("PSAV 3571 ADMINISTRATION")
+admin.site.site_title = ("3571 Admin")
