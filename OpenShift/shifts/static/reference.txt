@@ -1,0 +1,4 @@
+reference.txt
+
+used tutorials:
+http://stackoverflow.com/questions/12031825/how-to-set-up-django-website-with-jquery
