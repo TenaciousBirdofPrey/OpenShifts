@@ -32,6 +32,9 @@ urlpatterns = [
     #makes index a view from shifts- such that localhost:8000 is at first page.
     url(r'^$', shifts.views.index, name = 'index'),
 
+    #link to parking_train.html
+    url(r'^parking_train/', shifts.views.parking_train, name = 'parking_train'),
+
 
 	#not added by me.
     url(r'^admin/', admin.site.urls),

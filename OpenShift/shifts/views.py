@@ -14,5 +14,11 @@ def index(request):
     #form = TransfersForm()
     return render(request,'open_shifts.html',{
         'shifts': shifts,
+        'nbar': '/'
     })
+
+def parking_train(request):
+	return render(request, 'parking_train.html',{
+		'nbar': 'parking_train/',
+		})
 

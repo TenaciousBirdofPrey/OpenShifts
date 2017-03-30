@@ -30,10 +30,23 @@
 	      <a class="navbar-brand" href="#">PSAV @ 3571</a>
 	    </div>
 	    <ul class="nav navbar-nav">
-	      <li class="active"><a href="#">Home</a></li>
-	      <li><a href="#">Parking</a></li>
-	      <li><a href="#">Contact</a></li> 
+
+	      <li class="{% if nbar == '/' %}active{% endif %}"><a href="/">Home</a></li>
+
+	      <li class="{% if nbar == 'parking_train/' %}active{% endif %}"><a href="parking_train">Parking/train</a></li>
+
+	       <li class="dropdown">
+        		<a class="dropdown-toggle {% if nbar == '/' %}active{% endif %} " data-toggle="dropdown" href="parking_train/">Travel
+        		<span class="caret"></span></a>
+			        <ul class="dropdown-menu">
+			          <li><a href="parking_train/">hotel location</a></li>
+			          <li><a href="parking_train/">parking</a></li>
+			          <li><a href="parking_train/">train</a></li>
+			        </ul>
+      		</li>
+
 	    </ul>
+
 	    <ul class="nav navbar-nav navbar-right">
       	  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
