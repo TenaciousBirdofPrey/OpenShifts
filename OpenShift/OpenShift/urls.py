@@ -34,6 +34,9 @@ urlpatterns = [
 
     #link to parking_train.html
     url(r'^parking_train/', shifts.views.parking_train, name = 'parking_train'),
+    url(r'^hotel_location/', shifts.views.hotel_location, name = 'hotel_location'),
+    url(r'^parking/', shifts.views.parking, name = 'parking'),
+    url(r'^train/', shifts.views.train, name = 'train'),
 
 
 	#not added by me.

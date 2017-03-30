@@ -9,31 +9,27 @@
   <div class="jumbotron vertical-center">
      <!-- centering text via inline class... WILL CORRECT! -->
     <h2 class="text-center">Providence Renaissance</h2> 
-    <p class="text-center"> parking and train information</p> 
+    <p class="text-center"> {{  jumbo_info  }} </p>
   </div> 
 </div>
 
 <!-- begin location, parking, train nav bar -->
 
   <div class="row">
-    <div class="col-sm-2" style="background-color:lavender;">.col-sm-4</div>
+    <div class="col-sm-2" style="background-color:lavender;">l</div>
+
     <div class="col-sm-8" style="background-color:lavenderblush;">
-        <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                  
-                  <ul class="nav navbar-nav">
-                    <li class="{% if nbar == '/' %}active{% endif %}"><a href="/">Home</a></li>
-                    <li class="{% if nbar == 'parking_train/' %}active{% endif %}"><a href="parking_train">Parking/train</a></li>
-                    <li><a href="#">Contact</a></li> 
-                  </ul>
-                  
-                </div>
-      </nav>
+
+    {% block travel %}{% endblock %}
+    center
+    </div>
+        
 
 
-    <div class="col-sm-2" style="background-color:lavender;">.col-sm-4</div>
+    <div class="col-sm-2" style="background-color:lavender;">r</div>
   </div>
 
-
+  <!-- allow seperate sub pages -->
+ 
 </body>
 {% endblock  %}

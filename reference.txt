@@ -4,3 +4,5 @@ used tutorials:
 http://stackoverflow.com/questions/12031825/how-to-set-up-django-website-with-jquery
 
 http://stackoverflow.com/questions/25044370/make-clicked-tab-active-in-bootstrap
+
+http://stackoverflow.com/questions/38782075/django-a-href-tag-not-routing-properly

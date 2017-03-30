@@ -22,3 +22,21 @@ def parking_train(request):
 		'nbar': 'parking_train/',
 		})
 
+def hotel_location(request):
+	return render(request, 'hotel_location.html',{
+		'nbar': 'parking_train/',
+		'jumbo_info': 'Where to find the hotel'
+		})
+def parking(request):
+	return render(request, 'parking.html',{
+		'nbar': 'parking_train/',
+		'jumbo_info': 'Where to Park'
+		})
+
+def train(request):
+	return render(request, 'train.html',{
+		'nbar': 'parking_train/',
+		'jumbo_info': 'Catch the Train'
+		})
+
+
