@@ -39,4 +39,13 @@ def train(request):
 		'jumbo_info': 'Catch the Train'
 		})
 
+def each_shift(request,shift_id):
+		id = shift_id
+		each_shift_db = open_shift.objects.filter(pk = id)
+		return render(request, 'each_shift.html',{
+		'each_shift_db': each_shift_db,
+		'jumbo_info': 'confirm this shift'
+		})
+
+
 

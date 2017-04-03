@@ -1,0 +1,43 @@
+
+{% extends 'parking_train.html' %}
+{% block titel%} body_block {% endblock%}
+
+
+{% block travel %}
+
+
+<table class = "table table-striped ">
+  <tr>
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Description</th>
+    <th>Click to Confirm</th>
+  </tr>
+
+  {% for shift in each_shift_db %}
+    <tr>
+      <td>{{ shift.date}} </td>
+      <td> {{ shift.start}}</td>
+      <td> {{ shift.end}}</td>
+      <td> {{ shift.description}}</td>
+       <td> {{ shift.is_filled}}</td>
+    </tr>  
+  {% endfor%}
+
+
+  
+</table>
+
+
+
+
+
+
+
+
+
+
+{% endblock  %}
+
+

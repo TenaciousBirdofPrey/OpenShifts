@@ -24,7 +24,7 @@
 
   {% for shift in shifts %}
     <tr>
-      <td> {{ shift.date}}</td>
+      <td><a href="shift/{{shift.id}}">{{ shift.date}}</a> </td>
       <td> {{ shift.start}}</td>
       <td> {{ shift.end}}</td>
       <td> {{ shift.description}}</td>
