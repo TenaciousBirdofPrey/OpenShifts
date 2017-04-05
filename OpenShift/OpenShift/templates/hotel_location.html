@@ -34,6 +34,74 @@
           
           
         });
+
+
+
+
+           var mallCoordinates = [
+          {lat: 41.829278, lng: -71.417554},
+          {lat: 41.829110,  lng: -71.415505},
+          {lat: 41.825976, lng: -71.415784},
+          {lat: 41.826000, lng: -71.416674},
+          {lat:41.826632, lng:-71.417597},
+          {lat:41.827248, lng:-71.417736},
+          {lat: 41.829278, lng: -71.417554},
+        ];
+        var MallPath = new google.maps.Polygon({
+          paths: mallCoordinates,
+          strokeColor: '#11f042',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#11f042',
+      fillOpacity: 0.35
+        });
+
+        MallPath.setMap(map);
+        // hotel polygon
+        var hotelCoordinates = [
+          {lat:  41.829670, lng: -71.416444},
+          {lat: 41.830140,  lng: -71.416849},
+          {lat: 41.830268, lng: -71.416581},
+          {lat: 41.829786, lng: -71.416192},
+           {lat:  41.829670, lng: -71.416444},
+        
+        ];
+        var hotelPath = new google.maps.Polygon({
+          paths: hotelCoordinates,
+          strokeColor: '#FFFF00',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#FFFF00',
+      fillOpacity: 0.35
+        });
+
+        hotelPath.setMap(map);
+
+       // free parkin polygon
+        var freeparkCoordinates = [
+          {lat: 41.832170, lng: -71.418153},
+          {lat: 41.828652, lng: -71.420106},
+          {lat: 41.828572, lng: -71.419859},
+          {lat: 41.832140, lng: -71.417987},
+          {lat: 41.832170, lng: -71.418153},
+        
+        ];
+        var freeparkPath = new google.maps.Polygon({
+          paths: freeparkCoordinates,
+          strokeColor: '#085806',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#085806',
+          fillOpacity: 0.35
+        });
+
+/*        41.832170, -71.418153
+        41.828652, -71.420106
+        41.828572, -71.419859
+        41.832140, -71.417987*/
+
+        freeparkPath.setMap(map);      
+
       }
     </script>
     <script async defer

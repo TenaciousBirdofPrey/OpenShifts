@@ -8,7 +8,7 @@ from shifts.models import open_shift
 from .forms import open_shiftForm
 
 def index(request):
-    shifts = open_shift.objects.all()
+    shifts = open_shift.objects.filter(is_filled = False)
     #form = TransfersForm()
     return render(request,'open_shifts.html',{
         'shifts': shifts,
@@ -60,7 +60,7 @@ def post_confirm(request, shift_id):
 	
 	return render(request, 'confirmed.html',{
 		'fill_db': fill_db,
-		'jumbo_info': 'This Shift is Confirmed'
+		'jumbo_info': 'This shift is Confirmed'
 		})
 
 # filter(pk=object_id).update(is_inprocess=True)
