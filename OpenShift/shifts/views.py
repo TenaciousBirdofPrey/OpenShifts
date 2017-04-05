@@ -12,7 +12,8 @@ def index(request):
     #form = TransfersForm()
     return render(request,'open_shifts.html',{
         'shifts': shifts,
-        'nbar': '/'
+        'nbar': '/',
+        'jumbo_info': 'Available Shifts'
     })
 
 def parking_train(request):
