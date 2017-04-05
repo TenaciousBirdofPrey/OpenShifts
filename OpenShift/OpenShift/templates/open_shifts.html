@@ -9,7 +9,7 @@
   <div class="jumbotron vertical-center">
      <!-- centering text via inline class... WILL CORRECT! -->
     <h2 class="text-center">Providence Renaissance</h2> 
-    <p class="text-center">  view and select shifts by clicking the confirm button.</p> 
+    <p class="text-center">  Select dates to view and confirm</p> 
   </div> 
 </div>
 
@@ -28,7 +28,7 @@
       <td> {{ shift.start}}</td>
       <td> {{ shift.end}}</td>
       <td> {{ shift.description}}</td>
-       <td> {{ shift.is_filled}}</td>
+       <td> <a href="shift/{{shift.id}}" class="btn btn-success" role="button">Confirm</a></td>
     </tr>  
   {% endfor%}
 
@@ -37,3 +37,4 @@
 </table>
 </body>
 {% endblock  %}
+

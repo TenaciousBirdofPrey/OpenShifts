@@ -41,6 +41,8 @@ urlpatterns = [
     #each_shift as url
     url(r'^shift/([0-9]+)', shifts.views.each_shift, name = 'each_shift'),
 
+    #post confirm shift per per Ascent TV Tut
+    url(r'^shift/post_url/([0-9]+)', shifts.views.post_confirm, name = 'post_confirm'),
 
 	#not added by me.
     url(r'^admin/', admin.site.urls),

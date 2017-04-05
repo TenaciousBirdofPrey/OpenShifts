@@ -4,10 +4,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from shifts.models import open_shift
 
-# original per tutorial.
-# def index(reauest):
-# 	return HttpResponse ("open shifts will appear hear!")
-
+#import form for is_filled
+from .forms import open_shiftForm
 
 def index(request):
     shifts = open_shift.objects.all()
@@ -40,6 +38,9 @@ def train(request):
 		})
 
 def each_shift(request,shift_id):
+		# form = open_shiftForm(request.POST)
+		# if form.is_valid():
+		# 	form.save(commit = True)
 		id = shift_id
 		each_shift_db = open_shift.objects.filter(pk = id)
 		return render(request, 'each_shift.html',{
@@ -47,5 +48,18 @@ def each_shift(request,shift_id):
 		'jumbo_info': 'confirm this shift'
 		})
 
+def post_confirm(request, shift_id):
+	form = open_shiftForm(request.POST)
+	id = shift_id
+	fill_db = open_shift.objects.filter(pk = id)
+	fill_db.update(is_filled = True)
 
+	
+	
+	
+	return render(request, 'confirmed.html',{
+		'fill_db': fill_db,
+		'jumbo_info': 'This Shift is Confirmed'
+		})
 
+# filter(pk=object_id).update(is_inprocess=True)
