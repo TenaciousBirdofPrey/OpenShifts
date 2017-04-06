@@ -6,3 +6,8 @@ http://stackoverflow.com/questions/12031825/how-to-set-up-django-website-with-jq
 http://stackoverflow.com/questions/25044370/make-clicked-tab-active-in-bootstrap
 
 http://stackoverflow.com/questions/38782075/django-a-href-tag-not-routing-properly
+
+--the ONLY! django auth tut to work.
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
+
+

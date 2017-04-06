@@ -7,6 +7,11 @@ from shifts.models import open_shift
 #import form for is_filled
 from .forms import open_shiftForm
 
+#log in required
+from django.contrib.auth.decorators import login_required
+
+
+@login_required
 def index(request):
     shifts = open_shift.objects.filter(is_filled = False)
     #form = TransfersForm()
@@ -15,29 +20,45 @@ def index(request):
         'nbar': '/',
         'jumbo_info': 'Available Shifts'
     })
+@login_required
+def profile(request):
+    #shifts = open_shift.objects.filter(is_filled = False)
+    
+    return render(request,'profile.html',{
+        #'shifts': shifts,
+        'nbar': '/',
+        'jumbo_info': 'Available Shifts'
+    })
 
+
+@login_required
 def parking_train(request):
 	return render(request, 'parking_train.html',{
 		'nbar': 'parking_train/',
 		})
 
+@login_required
 def hotel_location(request):
 	return render(request, 'hotel_location.html',{
 		'nbar': 'parking_train/',
 		'jumbo_info': 'Where to find the hotel'
 		})
+
+@login_required	
 def parking(request):
 	return render(request, 'parking.html',{
 		'nbar': 'parking_train/',
 		'jumbo_info': 'Where to Park'
 		})
 
+@login_required
 def train(request):
 	return render(request, 'train.html',{
 		'nbar': 'parking_train/',
 		'jumbo_info': 'Catch the Train'
 		})
 
+@login_required
 def each_shift(request,shift_id):
 		# form = open_shiftForm(request.POST)
 		# if form.is_valid():
@@ -48,7 +69,8 @@ def each_shift(request,shift_id):
 		'each_shift_db': each_shift_db,
 		'jumbo_info': 'confirm this shift'
 		})
-
+		
+@login_required
 def post_confirm(request, shift_id):
 	form = open_shiftForm(request.POST)
 	id = shift_id

@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 # added by me:
+# Log in/out
+
 # point root URLconf at the shifts.urls module.
 from django.conf.urls import include
 # needed to establish view and template?
@@ -24,7 +26,10 @@ import shifts.views
 
 urlpatterns = [
 	#added by me:
-
+    # log in and Log out
+    # Login/Logout URLs and profile
+    url('^accounts/', include('django.contrib.auth.urls')),
+    url(r'^accounts/profile/', shifts.views.profile, name = 'profile'),
 
 	#point root URLconf at shifts.urls module using imported include
 	url(r'^shifts/', include('shifts.urls')),
