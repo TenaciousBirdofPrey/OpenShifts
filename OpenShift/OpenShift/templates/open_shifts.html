@@ -17,6 +17,9 @@
     <th>Click to Confirm</th>
   </tr>
 
+
+
+
   {% for shift in shifts %}
     <tr>
       <td><a href="shift/{{shift.id}}">{{ shift.date}}</a> </td>
@@ -26,14 +29,21 @@
       <td> {{ shift.attire}}</td>
        <td> <a href="shift/{{shift.id}}" class="btn btn-success" role="button">Confirm</a></td>
     </tr>  
-  {% endfor%}
 
-
+{% endfor%}
   
 </table>
 
+  
+    <!-- no shifts available -->
+    {% if not shifts %}
+    <div class="alert alert-danger">
+    <strong>No Available Shifts</strong> -Shifts will be updated as they are created.
+    </div>
+    {% endif %} 
+
 <div class="well well-sm">
-<h3> Shifts confirmed by {{ user.get_full_name }} </h3>
+<h3 class="text-center"> Shifts confirmed by {{ user.get_full_name }} </h3>
 </div>
 
  <table class = "table table-striped ">
