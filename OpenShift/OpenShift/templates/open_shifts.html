@@ -5,7 +5,8 @@
 {% block info-content %}
 <body>
 
-<h1> Available Shifts </h1>
+
+
  <table class = "table table-striped ">
   <tr>
     <th>Date</th>
@@ -31,8 +32,9 @@
   
 </table>
 
-
-<h1> Shifts confirmed by {{ user.get_full_name }} </h1>
+<div class="well well-sm">
+<h3> Shifts confirmed by {{ user.get_full_name }} </h3>
+</div>
 
  <table class = "table table-striped ">
   <tr>
