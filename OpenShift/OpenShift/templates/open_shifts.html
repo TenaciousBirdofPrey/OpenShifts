@@ -1,8 +1,8 @@
-{% extends 'parking_train.html' %}
+{% extends 'base.html' %}
 {% block titel%} body_block {% endblock%}
 
 
-{% block travel %}
+{% block info-content %}
 <body>
 
 <h1> Available Shifts </h1>
@@ -46,7 +46,7 @@
 
   {% for shift in confirmed_by_user %}
     <tr>
-      <td><a href="shift/{{shift.id}}">{{ shift.date}}</a> </td>
+      <td>{{ shift.date}}</a> </td>
       <td> {{ shift.start}}</td>
       <td> {{ shift.end}}</td>
       <td> {{ shift.description}}</td>
