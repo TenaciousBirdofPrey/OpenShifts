@@ -1,0 +1,2 @@
+1. "enter email" is not on field in password reset
+2. base.html link to log in and out needs url

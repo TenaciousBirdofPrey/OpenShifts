@@ -11,3 +11,7 @@ http://stackoverflow.com/questions/38782075/django-a-href-tag-not-routing-proper
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
 
 
+possible user registration apps:
+https://github.com/pennersr/django-allauth
+allauth templates:
+https://github.com/pennersr/django-allauth/tree/master/allauth/templates/account

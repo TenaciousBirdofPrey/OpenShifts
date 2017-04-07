@@ -26,10 +26,10 @@ import shifts.views
 
 urlpatterns = [
 	#added by me:
-    # log in and Log out
-    # Login/Logout URLs and profile
-    url('^accounts/', include('django.contrib.auth.urls')),
-    url(r'^accounts/profile/', shifts.views.profile, name = 'profile'),
+    # # log in and Log out  ---commented out to config allauth
+    # # Login/Logout URLs and profile
+    # url('^accounts/', include('django.contrib.auth.urls')),
+    # url(r'^accounts/profile/', shifts.views.profile, name = 'profile'),
 
 	#point root URLconf at shifts.urls module using imported include
 	url(r'^shifts/', include('shifts.urls')),
@@ -48,6 +48,9 @@ urlpatterns = [
 
     #post confirm shift per per Ascent TV Tut
     url(r'^shift/post_url/([0-9]+)', shifts.views.post_confirm, name = 'post_confirm'),
+
+    #allauth
+    url(r'^accounts/', include('allauth.urls')),
 
 	#not added by me.
     url(r'^admin/', admin.site.urls),
