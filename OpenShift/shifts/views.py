@@ -15,8 +15,15 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     shifts = open_shift.objects.filter(is_filled = False)
     #form = TransfersForm()
+
+    #get the shifts user has already confirmed --can change to user id later
+    current_user = request.user
+    first_name = current_user.first_name
+    last_name = current_user.last_name
+    confirmed_user = open_shift.objects.filter(filled_by =first_name+' '+last_name )
     return render(request,'open_shifts.html',{
         'shifts': shifts,
+        'confirmed_by_user': confirmed_user,
         'nbar': '/',
         'jumbo_info': 'Available Shifts'
     })
@@ -60,33 +67,40 @@ def train(request):
 
 @login_required
 def each_shift(request,shift_id):
-		# form = open_shiftForm(request.POST)
-		# if form.is_valid():
-		# 	form.save(commit = True)
+		# get available shifts
 		id = shift_id
 		each_shift_db = open_shift.objects.filter(pk = id)
+		
+		#get the shifts user has already confirmed --can change to user id later
+		current_user = request.user
+		first_name = current_user.first_name
+		last_name = current_user.last_name
+		confirmed_by_user = open_shift.objects.filter(filled_by =first_name+' '+last_name )
+
+
 		return render(request, 'each_shift.html',{
 		'each_shift_db': each_shift_db,
+		'confirmed_by_user': confirmed_by_user,
 		'jumbo_info': 'confirm this shift'
 		})
 		
 @login_required
 def post_confirm(request, shift_id):
-	form = open_shiftForm(request.POST)
-	id = shift_id
-	current_user = request.user
-	#get_full_name only return object so we are piecing it together.
-	first_name = current_user.first_name
-	last_name = current_user.last_name
-	fill_db = open_shift.objects.filter(pk = id)
-	fill_db.update(is_filled = True , filled_by = first_name+' '+last_name)
+		form = open_shiftForm(request.POST)
+		id = shift_id
+		current_user = request.user
+		#get_full_name only return object so we are piecing it together.
+		first_name = current_user.first_name
+		last_name = current_user.last_name
+		fill_db = open_shift.objects.filter(pk = id)
+		fill_db.update(is_filled = True , filled_by = first_name+' '+last_name)
 
-	
-	
-	
-	return render(request, 'confirmed.html',{
-		'fill_db': fill_db,
-		'jumbo_info': 'This shift is Confirmed'
-		})
+		
+		
+		
+		return render(request, 'confirmed.html',{
+			'fill_db': fill_db,
+			'jumbo_info': 'This shift is Confirmed'
+			})
 
 # filter(pk=object_id).update(is_inprocess=True)
