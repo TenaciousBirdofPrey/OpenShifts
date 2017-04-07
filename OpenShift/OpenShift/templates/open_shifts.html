@@ -12,6 +12,7 @@
     <th>Start Time</th>
     <th>End Time</th>
     <th>Description</th>
+    <th>Attire</th>
     <th>Click to Confirm</th>
   </tr>
 
@@ -21,6 +22,7 @@
       <td> {{ shift.start}}</td>
       <td> {{ shift.end}}</td>
       <td> {{ shift.description}}</td>
+      <td> {{ shift.attire}}</td>
        <td> <a href="shift/{{shift.id}}" class="btn btn-success" role="button">Confirm</a></td>
     </tr>  
   {% endfor%}
@@ -30,6 +32,7 @@
 </table>
 eacg
 
-<h1> user = {{ user }} </h1>
+<h1> user = {{ user.get_full_name }} </h1>
+
 </body>
 {% endblock  %}

@@ -74,8 +74,12 @@ def each_shift(request,shift_id):
 def post_confirm(request, shift_id):
 	form = open_shiftForm(request.POST)
 	id = shift_id
+	current_user = request.user
+	#get_full_name only return object so we are piecing it together.
+	first_name = current_user.first_name
+	last_name = current_user.last_name
 	fill_db = open_shift.objects.filter(pk = id)
-	fill_db.update(is_filled = True)
+	fill_db.update(is_filled = True , filled_by = first_name+' '+last_name)
 
 	
 	

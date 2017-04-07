@@ -12,6 +12,7 @@
     <th>Start Time</th>
     <th>End Time</th>
     <th>Description</th>
+    <th>Attire</th>
     <th>Click to Confirm</th>
   </tr>
 
@@ -21,12 +22,13 @@
       <td> {{ shift.start}}</td>
       <td> {{ shift.end}}</td>
       <td> {{ shift.description}}</td>
-       <td> <form action = "post_url/{{shift.id}}" method="post" >
+      <td> {{ shift.attire}}</td>
+      <td> <form action = "post_url/{{shift.id}}" method="post" >
         {% csrf_token %}
         {{ form }}
-        <input type="submit" values ="Submit"/>
+          <input type="submit" values ="Submit"/>
         </form>
-        </td>
+      </td>
     </tr>  
   {% endfor%}
 
