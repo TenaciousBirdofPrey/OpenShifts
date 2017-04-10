@@ -5,6 +5,9 @@ from . import views
 urlpatterns = [
 	url(r'^$', views.index, name = 'index'),
 
+	#create shifts-DET only
+	url(r'create_shifts/', views.create_shifts, name = 'create_shifts'),
+
 	#user profile
 	url(r'accounts/profile/', views.profile, name = 'profile'),
 	#parking_train

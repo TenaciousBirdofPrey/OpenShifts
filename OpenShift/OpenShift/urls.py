@@ -37,6 +37,9 @@ urlpatterns = [
     #makes index a view from shifts- such that localhost:8000 is at first page.
     url(r'^$', shifts.views.index, name = 'index'),
 
+    #Create Shifts-DET only-----------CHANGE TO BLAST SHIFTS VIEW!!!!!!!!!!!!!!!!!!
+    url(r'^create_shifts', shifts.views.create_shifts, name = 'create_shifts'),
+
     #link to parking_train.html
     url(r'^parking_train/', shifts.views.parking_train, name = 'parking_train'),
     url(r'^hotel_location/', shifts.views.hotel_location, name = 'hotel_location'),

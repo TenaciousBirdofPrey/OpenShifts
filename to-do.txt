@@ -1,1 +1,3 @@
 1. "enter email" is not on field in password reset
+2. add email required to user model
+3. email blaster

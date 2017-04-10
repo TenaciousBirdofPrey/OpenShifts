@@ -11,3 +11,8 @@ class open_shift(models.Model):
 	is_filled = models.BooleanField(default = False)
 	is_sent = models.BooleanField(default = False)
 	filled_by = models.CharField(max_length = 200, null = True, blank = True, verbose_name ='filled by')
+		
+	class Meta:
+	    permissions = (
+	            ("can_add_date", "Can add date"),
+	        )

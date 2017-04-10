@@ -153,3 +153,6 @@ STATIC_URL = '/static/'
 
 # auth and allauth settings
 LOGIN_REDIRECT_URL = 'index'
+
+#allows for email testing. Logs it to console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

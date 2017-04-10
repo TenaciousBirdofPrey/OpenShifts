@@ -104,3 +104,10 @@ def post_confirm(request, shift_id):
 			})
 
 # filter(pk=object_id).update(is_inprocess=True)
+
+@login_required
+def create_shifts(request):
+	return render(request, 'create_shifts.html',{
+		'nbar': 'create_shifts',
+		'jumbo_info': 'Create Shifts'
+		})
