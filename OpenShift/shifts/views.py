@@ -10,6 +10,13 @@ from .forms import open_shiftForm
 #log in required
 from django.contrib.auth.decorators import login_required
 
+#imprt for email
+from django.contrib.auth.models import User
+from django.template import Context
+from django.template.loader import render_to_string, get_template
+from django.core.mail import EmailMessage
+
+
 
 @login_required
 def index(request):
@@ -107,7 +114,41 @@ def post_confirm(request, shift_id):
 
 @login_required
 def blast_shifts(request):
+	#get all shifts that are not emailed.
+	unblasted_db = open_shift.objects.filter(is_sent = False, is_filled=False)
 	return render(request, 'blast_shifts.html',{
 		'nbar': 'blast_shifts',
-		'jumbo_info': 'Send out Emails'
+		'jumbo_info': 'Send out Emails',
+		'unblasted_db': unblasted_db,
 		})
+
+@login_required
+def blast_confirm(request):
+	#get all shifts that are not emailed.
+	unblasted_db = open_shift.objects.filter(is_sent = False, is_filled = False)
+
+	# send all techs and email alerting creation of new shifts
+	techs = User.objects.filter(groups__name='techs')
+	for u in techs:
+		subject = "New shifts are available at the Renaissance Providence"
+		to = [u.email]
+		from_email = 'bodonnellpsav@gmail.com'
+		ctx = {
+	        'user': u.first_name,
+	        'unblasted_db': unblasted_db,
+	     }
+		message = get_template('EMAIL_available_shifts.html').render(Context(ctx))
+		msg = EmailMessage(subject, message, to=to, from_email=from_email)
+		msg.content_subtype = 'html'
+		msg.send()
+
+	# mark each shift as sent to avoid duplicate sendings.	
+	
+	unblasted_db.update(is_sent = True)
+
+	return render(request, 'blast_confirm.html',{
+		'nbar': 'blast_confirm',
+
+		
+		
+		})	

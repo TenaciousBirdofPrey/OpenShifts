@@ -39,6 +39,7 @@ urlpatterns = [
 
     #Blast Shifts-DET only
     url(r'^blast_shifts/', shifts.views.blast_shifts, name = 'blast_shifts'),
+    url(r'^blast_confirm/', shifts.views.blast_confirm, name = 'blast_confirm'),
 
     #link to parking_train.html
     url(r'^parking_train/', shifts.views.parking_train, name = 'parking_train'),

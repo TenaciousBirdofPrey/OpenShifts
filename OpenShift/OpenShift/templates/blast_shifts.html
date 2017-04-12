@@ -4,6 +4,34 @@
 
 {% block info-content %}
 
-blast shift
+<h1> The following shifts are ready to be blasted to the tech pool </h1>
+
+ <table class = "table table-striped ">
+  <tr>
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Description</th>
+    <th>Attire</th>
+    
+  </tr>
+
+  {% for shift in unblasted_db %}
+    <tr>
+      <td>{{ shift.date}}</a> </td>
+      <td> {{ shift.start}}</td>
+      <td> {{ shift.end}}</td>
+      <td> {{ shift.description}}</td>
+      <td> {{ shift.attire}}</td>
+       
+    </tr>  
+  {% endfor%}
+
+
+  
+</table>
+
+<a href="{% url 'blast_confirm' %}" type="button" class="btn btn-danger btn-lg btn-block">Send Emails.</a>
 
 {% endblock  %}
+

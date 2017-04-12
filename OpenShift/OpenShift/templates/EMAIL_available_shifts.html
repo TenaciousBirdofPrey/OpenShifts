@@ -1,0 +1,53 @@
+<style>
+ table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+
+
+Hello {{ user }},<br />
+<p>
+New Shifts are available at the Renaissance Providence.
+</p>
+
+<p>
+Thanks
+</p>
+
+<table >
+  <tr>
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Description</th>
+    <th>Attire</th>
+
+  </tr>
+
+
+
+
+  {% for shift in unblasted_db %}
+    <tr>
+      <td>{{ shift.date}}</a> </td>
+      <td> {{ shift.start}}</td>
+      <td> {{ shift.end}}</td>
+      <td> {{ shift.description}}</td>
+      <td> {{ shift.attire}}</td>
+
+    </tr>  
+
+{% endfor%}
+
+
+  
+</table>
+<br>
+You can confirm any shift by clicking <a href="http://localhost:8000/">www.AVShifts.com</a>
+<br><br>
+Thank you,
+<br><br>
+
+
+Brendan O'Donnell

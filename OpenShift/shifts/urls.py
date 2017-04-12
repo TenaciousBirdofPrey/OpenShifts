@@ -7,6 +7,7 @@ urlpatterns = [
 
 	#create shifts-DET only
 	url(r'blast_shifts/', views.blast_shifts, name = 'blast_shifts'),
+	url(r'blast_confirm/', views.blast_confirm, name = 'blast_confirm'),
 
 	#user profile
 	url(r'accounts/profile/', views.profile, name = 'profile'),

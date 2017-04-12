@@ -39,10 +39,10 @@
 		 <!-- create shifts panel -->
 		 {% if perms.shifts.can_add_date %}
 		 
-		 
+      	  <li class="{% if nbar == 'create_shifts' %}active{% endif %}"><a href="{% url 'admin:index' %}">Create Shifts</a></li>		 
 
       	  <li class="{% if nbar == 'blast_shifts' %}active{% endif %}"><a href="{% url 'blast_shifts' %}">Send Emails</a></li>
-      	  <li class="{% if nbar == 'create_shifts' %}active{% endif %}"><a href="{% url 'admin:index' %}">Create Shifts</a></li>	
+	
 		  {% endif %}	
 
 	       <li class="dropdown  {% if nbar == 'parking_train/' %}active{% endif %} ">
