@@ -155,4 +155,9 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'index'
 
 #allows for email testing. Logs it to console
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST ='smtp.gmail.com'
+EMAILPORT= 465
+EMAIL_HOST_USER = 'bodonnellpsav' # os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD ='     ' #os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_USE_TLS =True

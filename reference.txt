@@ -23,3 +23,5 @@ environmental variables:
 https://godjango.com/blog/working-with-environment-variables-in-python/
 http://stackoverflow.com/questions/14786072/keep-secret-keys-out-with-environment-variables
 http://andrewtorkbaker.com/using-environment-variables-with-django-settings
+--windows
+http://stackoverflow.com/questions/26368306/export-is-not-recognized-as-an-internal-or-external-command
