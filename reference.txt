@@ -15,3 +15,11 @@ possible user registration apps:
 https://github.com/pennersr/django-allauth
 allauth templates:
 https://github.com/pennersr/django-allauth/tree/master/allauth/templates/account
+
+emails:
+https://godjango.com/19-using-templates-for-sending-emails/
+
+environmental variables:
+https://godjango.com/blog/working-with-environment-variables-in-python/
+http://stackoverflow.com/questions/14786072/keep-secret-keys-out-with-environment-variables
+http://andrewtorkbaker.com/using-environment-variables-with-django-settings
