@@ -39,14 +39,16 @@
     <!-- no shifts available -->
     {% if not shifts %}
     <div class="alert alert-danger">
-    <strong>No Available Shifts</strong> -Shifts will be updated as they are created.
+    <strong>No Available Shifts</strong> -all available shifts have been taken.
     </div>
     {% endif %} 
 
+{% if not perms.shifts.can_add_date %} <!-- hide taken shifts in DET view -->
 <div class="well well-sm">
 <h4 class="text-center"> Hello, {{ user.get_full_name }}.</h4>
 <p class="text-center"> Below are the shifts you have confirmed. </p>
 </div>
+
 
  <table class = "table table-striped ">
   <tr>
@@ -72,6 +74,12 @@
 
   
 </table>
-
+{% if not confirmed_by_user %}
+    <div class="alert alert-danger">
+    <strong>You have no confirmed shifts</strong> 
+    </div>
+    {% endif %} 
 </body>
+
+{% endif %}
 {% endblock  %}

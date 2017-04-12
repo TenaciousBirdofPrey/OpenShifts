@@ -21,13 +21,14 @@
     <script>
       function initMap() {
         var uluru = {lat: 41.829259, lng: -71.413253 };
+        var hotel_loc = {lat: 41.830055, lng: -71.416644};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 20,
           center: uluru
         });
-        var image = "../static/train.svg" ;
+        var image = "../static/psav_icon3.jpg" ;
         var marker = new google.maps.Marker({
-          position: uluru,
+          position: hotel_loc,
           map: map,
           icon: image,
           animation: google.maps.Animation.DROP

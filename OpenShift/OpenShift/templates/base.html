@@ -30,11 +30,11 @@
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">PSAV @ 3571</a>
+	      <a class="navbar-brand" href="{% url 'index' %}">PSAV @ 3571</a>
 	    </div>
 	    <ul class="nav navbar-nav">
 		{% if user.is_authenticated %}
-	      <li class="{% if nbar == '/' %}active{% endif %}"><a href="/">Available Shifts</a></li>
+	      <li class="{% if nbar == '/' %}active{% endif %}"><a href="{% url 'index' %}">Available Shifts</a></li>
 
 		 <!-- create shifts panel -->
 		 {% if perms.shifts.can_add_date %}

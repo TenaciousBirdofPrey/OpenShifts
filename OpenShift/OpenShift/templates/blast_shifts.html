@@ -30,8 +30,10 @@
 
   
 </table>
-
+{%if not  unblasted_db%}
+<a href="{% url 'admin:index' %}" type="button" class="btn btn-success btn-lg btn-block">There are no shifts to blast</a>
+{% else %}
 <a href="{% url 'blast_confirm' %}" type="button" class="btn btn-danger btn-lg btn-block">Send Emails.</a>
-
+{% endif %}
 {% endblock  %}
 
