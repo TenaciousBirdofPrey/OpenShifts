@@ -159,5 +159,5 @@ LOGIN_REDIRECT_URL = 'index'
 EMAIL_HOST ='smtp.gmail.com'
 EMAILPORT= 465
 EMAIL_HOST_USER = 'bodonnellpsav' # os.environ['EMAIL_HOST_USER']
-EMAIL_HOST_PASSWORD ='yeah right, nice try!' #os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_HOST_PASSWORD ='keep on tryin...I like you' #os.environ['EMAIL_HOST_PASSWORD']
 EMAIL_USE_TLS =True

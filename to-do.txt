@@ -1,7 +1,14 @@
 1. "enter email" is not on field in password reset
 2. add email required to user model
-3. email blaster
+
 4. add "you have not confirmed any shifts" alert to user view
 5. remove confimred shifts from DET view
-6. shift has been confirmed email alert
+
 7. no shifts to be sent out - blue button
+8. pin on hotel at train view
+
+
+
+DONE
+3. email blaster-4/12
+6. shift has been confirmed email alert 4/12

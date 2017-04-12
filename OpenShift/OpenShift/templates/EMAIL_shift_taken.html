@@ -1,0 +1,53 @@
+<style>
+ table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+
+
+Hello {{ user_first }} {{user_last}},<br />
+<p>
+You have confirmed the following shift.
+</p>
+
+<p>
+Thanks
+</p>
+
+<table >
+  <tr>
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Description</th>
+    <th>Attire</th>
+
+  </tr>
+
+
+
+
+  {% for shift in fill_db %}
+    <tr>
+      <td>{{ shift.date}}</a> </td>
+      <td> {{ shift.start}}</td>
+      <td> {{ shift.end}}</td>
+      <td> {{ shift.description}}</td>
+      <td> {{ shift.attire}}</td>
+
+    </tr>  
+
+{% endfor%}
+
+
+  
+</table>
+<br>
+In order to modify your confirmation please call 401-919-5035.
+<br><br>
+Thank you,
+<br><br>
+
+
+Brendan O'Donnell

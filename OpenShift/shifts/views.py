@@ -76,7 +76,7 @@ def train(request):
 def each_shift(request,shift_id):
 		# get available shifts
 		id = shift_id
-		each_shift_db = open_shift.objects.filter(pk = id)
+		each_shift_db = open_shift.objects.filter(pk = id, is_filled= False)
 		
 		#get the shifts user has already confirmed --can change to user id later
 		current_user = request.user
@@ -100,10 +100,24 @@ def post_confirm(request, shift_id):
 		first_name = current_user.first_name
 		last_name = current_user.last_name
 		fill_db = open_shift.objects.filter(pk = id)
-		fill_db.update(is_filled = True , filled_by = first_name+' '+last_name)
+		
+
+		#send confirm email
+		subject = "Confirmed Shift " 
+		to = [current_user.email, 'bodonnellpsav@gmail.com']
+		from_email = 'bodonnellpsav@gmail.com'
+		ctx = {
+		        'user_first': first_name,
+		        'user_last'  : last_name,
+		        'fill_db': fill_db,
+		     }
+		message = get_template('EMAIL_shift_taken.html').render(Context(ctx))
+		msg = EmailMessage(subject, message, to=to, from_email=from_email)
+		msg.content_subtype = 'html'
+		msg.send()
 
 		
-		
+		fill_db.update(is_filled = True , filled_by = first_name+' '+last_name)
 		
 		return render(request, 'confirmed.html',{
 			'fill_db': fill_db,
