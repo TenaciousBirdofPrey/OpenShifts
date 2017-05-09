@@ -25,3 +25,6 @@ http://stackoverflow.com/questions/14786072/keep-secret-keys-out-with-environmen
 http://andrewtorkbaker.com/using-environment-variables-with-django-settings
 --windows
 http://stackoverflow.com/questions/26368306/export-is-not-recognized-as-an-internal-or-external-command
+
+#all auth - adding user first and last name.
+http://stackoverflow.com/questions/12303478/how-to-customize-user-profile-when-using-django-allauth

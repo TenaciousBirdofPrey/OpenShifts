@@ -159,5 +159,11 @@ LOGIN_REDIRECT_URL = 'index'
 EMAIL_HOST ='smtp.gmail.com'
 EMAILPORT= 465
 EMAIL_HOST_USER = 'bodonnellpsav' # os.environ['EMAIL_HOST_USER']
-EMAIL_HOST_PASSWORD ='keep on tryin...I like you' #os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_HOST_PASSWORD ='you still looking?' #os.environ['EMAIL_HOST_PASSWORD']
 EMAIL_USE_TLS =True
+
+#add user first and last name per all auth
+ACCOUNT_SIGNUP_FORM_CLASS = 'shifts.forms.SignupForm'
+# allauth sign by email
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_EMAIL_REQUIRED =True

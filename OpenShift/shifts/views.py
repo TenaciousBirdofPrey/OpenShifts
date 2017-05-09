@@ -104,7 +104,7 @@ def post_confirm(request, shift_id):
 
 		#send confirm email
 		subject = "Confirmed Shift " 
-		to = [current_user.email, 'bodonnellpsav@gmail.com']
+		to = [current_user.email, 'bodonnell@psav.com']
 		from_email = 'bodonnellpsav@gmail.com'
 		ctx = {
 		        'user_first': first_name,
