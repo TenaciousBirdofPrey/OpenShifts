@@ -1,0 +1,425 @@
+{% extends 'todvstom_base.html' %}
+{% block titel%} body_block {% endblock%}
+
+
+{% block info-content %}
+
+
+
+<!-- Initiate FullPage JS-->    
+<script type="text/javascript" >
+$(document).ready(function() {
+    $('#fullpage').fullpage({
+        //Navigation
+        menu: '#menu',
+        lockAnchors: false,
+        anchors:['page1', 'page2', 'page3', 'page4','page5'],
+        navigation: false,
+        navigationPosition: 'left',
+        navigationTooltips: ['WELCOME', 'ABOUT'],
+        showActiveTooltip: true,
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
+        //Scrolling
+        css3: true,
+        scrollingSpeed: 700,
+        autoScrolling: false,
+        fitToSection: true,
+        fitToSectionDelay: 1000,
+        scrollBar: false,
+        easing: 'easeInOutCubic',
+        easingcss3: 'ease',
+        loopBottom: false,
+        loopTop: false,
+        loopHorizontal: true,
+        continuousVertical: false,
+        continuousHorizontal: false,
+        scrollHorizontally: false,
+        interlockedSlides: false,
+        resetSliders: false,
+        fadingEffect: false,
+        normalScrollElements: '#element1, .element2',
+        scrollOverflow: false,
+        scrollOverflowOptions: null,
+        touchSensitivity: 15,
+        normalScrollElementTouchThreshold: 5,
+        bigSectionsDestination: null,
+        //Accessibility
+        keyboardScrolling: true,
+        animateAnchor: true,
+        recordHistory: true,
+        //Design
+        controlArrows: false,
+        verticalCentered: true,
+        sectionsColor : ['#a5a5a4', '#a5a5a4','#a5a5a4','#a5a5a4','#a5a5a4'],
+        paddingTop: '1em',
+        paddingBottom: '10px',
+        fixedElements: '#header, .footer',
+        responsiveWidth: 0,
+        responsiveHeight: 0,
+        responsiveSlides: false,
+        //Custom selectors
+        sectionSelector: '.section',
+        slideSelector: '.slide',
+        //events
+        onLeave: function(index, nextIndex, direction){},
+        afterLoad: function(anchorLink, index){},
+        afterRender: function(){
+                                         
+                                },
+        afterResize: function(){},
+        afterResponsive: function(isResponsive){},
+        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+        onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+    });
+});
+    </script>
+    
+
+    
+   <div id="fullpage">
+
+    
+        <!--room 1 start-->
+        <div class="section" data-anchor="page1">
+            <!--slide start-->
+            <div class="slide">
+               <h2 style = color:black>Ballroom today</h2>
+                                    <!--boot strap-->
+                                   <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                              <h3>GROUP</h3>
+                                              <h4>National Grid</h4>
+                                              <h4>Time: 8am - 5pm</h4>
+                                              <h4>Contact: Mary Elms</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>AV Set</h3>
+                                              <h4>Data Support</h4>
+                                              <h4>Wireless Mouse</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>Notes</h3>
+                                              <h4>Client has VIP status</h4>
+                                              <h4>may ask for wireless mouse</h4>
+                                            </div>
+                                         </div>
+                                    </div><!--end boot strap-->
+                                    
+              
+            </div><!--end room slide day--> 
+            
+            <!--slide start-->
+            <div class="slide">
+               <h2 style = color:black>Ballroom Tommorow</h2>
+                                    <!--boot strap-->
+                                   <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                              <h3>GROUP</h3>
+                                              <h4>FM Global</h4>
+                                              <h4>Time: 9am - 3pm</h4>
+                                              <h4>Contact: Donna Ells</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>AV Set</h3>
+                                              <h4>Data Display</h4>
+                                              <h4>Wireless Mouse</h4>
+                                               <h4>4 Lavaliers</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>Notes</h3>
+                                              <h4>Client very nervouse</h4>
+                                              <h4>Wants to meet at 8am</h4>
+                                            </div>
+                                         </div>
+                                    </div><!--end boot strap-->
+                                    
+              
+            </div><!--end room slide day--> 
+        
+        </div> <!--end room -->   
+        
+        
+        <!--room 1 start-->
+        <div class="section" data-anchor="page2">
+            <!--slide start-->
+            <div class="slide">
+               <h2 style = color:black>Beethoven today</h2>
+                                    <!--boot strap-->
+                                   <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                              <h3>GROUP</h3>
+                                              <h4>National Grid</h4>
+                                              <h4>Time: 8am - 5pm</h4>
+                                              <h4>Contact: Mary Elms</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>AV Set</h3>
+                                              <h4>Data Support</h4>
+                                              <h4>Wireless Mouse</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>Notes</h3>
+                                              <h4>Client has VIP status</h4>
+                                              <h4>may ask for wireless mouse</h4>
+                                              <h4>Break out from Ballroom</h4>
+                                            </div>
+                                         </div>
+                                    </div><!--end boot strap-->
+                                    
+              
+            </div><!--end room slide day--> 
+            
+            <!--slide start-->
+            <div class="slide">
+               <h2 style = color:black>Beethoven Tommorow</h2>
+                                    <!--boot strap-->
+                                   <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                              <h3>GROUP</h3>
+                                              <h4>Smith/Johnsone Wedding</h4>
+                                              <h4>Time: 7pm - 12am</h4>
+                                              <h4>Contact: Mike Johnson</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>AV Set</h3>
+                                              <h4>NO AV NEDDED</h4>
+                                             
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>Notes</h3>
+                                              <h4>Late night turn</h4>
+                                              <h4>need to set for next day</h4>
+                                            </div>
+                                         </div>
+                                    </div><!--end boot strap-->
+                                    
+              
+            </div><!--end room slide day--> 
+        
+        </div> <!--end room -->          
+        
+
+
+
+
+
+
+
+
+
+        <!--room 1 start-->
+        <div class="section" data-anchor="page3">
+            <!--slide start-->
+            <div class="slide">
+               <h2 style = color:black>Mozart today</h2>
+                                    <!--boot strap-->
+                                   <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                              <h3>GROUP</h3>
+                                              <h4>National Grid</h4>
+                                              <h4>Time: 8am - 5pm</h4>
+                                              <h4>Contact: Mary Elms</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>AV Set</h3>
+                                              <h4>Data Support</h4>
+                                              <h4>Wireless Mouse</h4>
+                                              <h4>add laptop for this day</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>Notes</h3>
+                                              <h4>May ask for flip more charts</h4>
+                                              <h4>This is a Carry Over</h4>
+                                            </div>
+                                         </div>
+                                    </div><!--end boot strap-->
+                                    
+              
+            </div><!--end room slide day--> 
+            
+            <!--slide start-->
+            <div class="slide">
+               <h2 style = color:black>Mozart Tommorow</h2>
+                                    <!--boot strap-->
+                                   <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                              <h3>GROUP</h3>
+                                              <h4>Astell Pharma</h4>
+                                              <h4>Time: 8am - 5pm</h4>
+                                              <h4>Contact: Don Markson</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>AV Set</h3>
+                                              <h4>Data Projector</h4>
+                                              <h4>Wireless Mouse</h4>
+                                              <h4>add lav in afternoon</h4>
+                                              
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>Notes</h3>
+                                              <h4>Repeat Client</h4>
+                                              <h4>Is leaving for offsite during lunch</h4>
+                                            </div>
+                                         </div>
+                                    </div><!--end boot strap-->
+                                    
+              
+            </div><!--end room slide day--> 
+        
+        </div> <!--end room -->  
+        
+        
+        
+        
+        
+        <!--room 1 start-->
+        <div class="section" data-anchor="page4">
+            <!--slide start-->
+            <div class="slide">
+               <h2 style = color:black>Haydn today</h2>
+                                    <!--boot strap-->
+                                   <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                              <h3>GROUP</h3>
+                                              <h4>RISD</h4>
+                                              <h4>Time: 8am - 5pm</h4>
+                                              <h4>Contact: Mark Ericson</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>AV Set</h3>
+                                              <h4>Data Dispaly</h4>
+                                              <h4>Pipe and Drape</h4>
+                                              <h4>10 LEDs set to light blue</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>Notes</h3>
+                                              <h4>graduation rehearsal</h4>
+                                             
+                                            </div>
+                                         </div>
+                                    </div><!--end boot strap-->
+                                    
+              
+            </div><!--end room slide day--> 
+            
+            <!--slide start-->
+            <div class="slide">
+               <h2 style = color:black>Haydn Tommorow</h2>
+                                    <!--boot strap-->
+                                   <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                              <h3>GROUP</h3>
+                                              <h4>National Grid</h4>
+                                              <h4>Time: 8am - 5pm</h4>
+                                              <h4>Contact: Mary Elms</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>AV Set</h3>
+                                              <h4>Data Display</h4>
+                                              <h4> power to each table</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>Notes</h3>
+                                              <h4>Client has VIP status</h4>
+                                              <h4>CEO in attendance</h4>
+                                            </div>
+                                         </div>
+                                    </div><!--end boot strap-->
+                                    
+              
+            </div><!--end room slide day--> 
+        
+        </div> <!--end room -->  
+        
+
+
+
+
+        <!--room 1 start-->
+        <div class="section" data-anchor="page5">
+            <!--slide start-->
+            <div class="slide">
+               <h2 style = color:black>Handel Today</h2>
+                                    <!--boot strap-->
+                                   <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                              <h3>GROUP</h3>
+                                              <h4>National Grid</h4>
+                                              <h4>Time: 8am - 5pm</h4>
+                                              <h4>Contact: Mary Elms</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>AV Set</h3>
+                                              <h4>Data Support</h4>
+                                              <h4>Wireless Mouse</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>Notes</h3>
+                                              <h4>Client has VIP status</h4>
+                                              <h4>may add polycom</h4>
+                                            </div>
+                                         </div>
+                                    </div><!--end boot strap-->
+                                    
+              
+            </div><!--end room slide day--> 
+            
+            <!--slide start-->
+            <div class="slide">
+               <h2 style = color:black>Handel Tommorow</h2>
+                                    <!--boot strap-->
+                                   <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                              <h3>GROUP</h3>
+                                              <h4>National Grid</h4>
+                                              <h4>Time: 8am - 5pm</h4>
+                                              <h4>Contact: Mary Elms</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>AV Set</h3>
+                                              <h4>Data Support</h4>
+                                              <h4>Wireless Mouse</h4>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <h3>Notes</h3>
+                                              <h4>Client has VIP status</h4>
+                                              <h4>may break early</h4>
+                                            </div>
+                                         </div>
+                                    </div><!--end boot strap-->
+                                    
+              
+            </div><!--end room slide day--> 
+        
+        </div> <!--end room -->          
+        
+        
+    </div> 
+    
+    
+    
+    
+        <!--navigation menu --note: must be under video section or wont be visible-->        
+        <ul id="menu">
+	        <li data-menuanchor="page1" class="active"><a href="#page1">Ballroom</a></li>
+        	<li data-menuanchor="page2"><a href="#page2">Beethoven</a></li>
+	        <li data-menuanchor="page3"><a href="#page3">Mozart</a></li>
+	        <li data-menuanchor="page4"><a href="#page4">Haydn</a></li>
+	        <li data-menuanchor="page5"><a href="#page5">Handel</a></li>
+        </ul>
+        
+
+
+
+{% endblock  %}

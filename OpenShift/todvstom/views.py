@@ -13,7 +13,7 @@ from django.http import HttpResponse
 def room_sets(request):
     
 
-    return render(request,'todvstom_base.html',{
+    return render(request,'todvstom_inner.html',{
         
         
         'nbar': 'room_sets',

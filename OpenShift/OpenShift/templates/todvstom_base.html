@@ -1,72 +1,121 @@
+{% load static %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
 
-{% extends 'base.html' %}
-{% block titel%} body_block {% endblock%}
-
-
-{% block info-content %}
-woop woop
-
-<!-- <table class = "table table-striped ">
-  <tr>
-    <th>Date</th>
-    <th>Start Time</th>
-    <th>End Time</th>
-    <th>Description</th>
-    <th>Attire</th>
-    <th>Click to Confirm</th>
-  </tr>
-
-  {% for shift in each_shift_db %}
-    <tr>
-      <td>{{ shift.date}} </td>
-      <td> {{ shift.start}}</td>
-      <td> {{ shift.end}}</td>
-      <td> {{ shift.description}}</td>
-      <td> {{ shift.attire}}</td>
-      <td> <form action = "post_url/{{shift.id}}" method="post" >
-        {% csrf_token %}
-        {{ form }}
-          <input type="submit" values ="Submit"/>
-        </form>
-      </td>
-    </tr>  
-  {% endfor%}
-
-
-  
-</table>
-
-<h1> Shifts confirmed by {{ user.get_full_name }} </h1>
-
- <table class = "table table-striped ">
-  <tr>
-    <th>Date</th>
-    <th>Start Time</th>
-    <th>End Time</th>
-    <th>Description</th>
-    <th>Attire</th>
+<head>
+    <meta charset="UTF-8">
+    <title>PSAV</title>
     
-  </tr>
+    <!-- FullpageJS requirements -->
+    <link rel="stylesheet" type="text/css" href="{% static 'jquery.fullPage.css' %}" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'jquery.fullPage.js' %}"></script>
+                                    
+    
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
-  {% for shift in confirmed_by_user %}
-    <tr>
-      <td>{{ shift.date}}</a> </td>
-      <td> {{ shift.start}}</td>
-      <td> {{ shift.end}}</td>
-      <td> {{ shift.description}}</td>
-      <td> {{ shift.attire}}</td>
-       
-    </tr>  
-  {% endfor%}
+    
+    <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 
 
   
-</table> -->
+
+
+</head>
 
 
 
 
+ {% if have_jumbo == 'yes' %}
+<body>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{% url 'index' %}">PSAV @ 3571</a>
+      </div>
+      <ul class="nav navbar-nav">
+    {% if user.is_authenticated %}
+        <li class="{% if nbar == '/' %}active{% endif %}"><a href="{% url 'index' %}">Available Shifts</a></li>
+        <li class="{% if nbar == 'room_sets' %}active{% endif %}"><a href="{% url 'room_sets' %}">Room Sets</a></li>
+
+     <!-- create shifts panel -->
+     {% if perms.shifts.can_add_date %}
+     
+          <li class="{% if nbar == 'create_shifts' %}active{% endif %}"><a href="{% url 'admin:index' %}">Create Shifts</a></li>     
+
+          <li class="{% if nbar == 'blast_shifts' %}active{% endif %}"><a href="{% url 'blast_shifts' %}">Send Emails</a></li>
+  
+      {% endif %} 
+
+         <li class="dropdown  {% if nbar == 'parking_train/' %}active{% endif %} ">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="parking_train/">Travel
+            <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'hotel_location' %}">Hotel Location</a></li>
+                <li><a href="{% url 'parking' %}">Parking</a></li>
+                <li><a href="{% url 'train' %}">Train</a></li>
+              </ul>
+          </li>
 
 
 
-{% endblock  %}
+        {% endif %}
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+      {% if user.is_authenticated %}
+
+
+          <li><a href="{% url 'account_logout' %}"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+          {% else %}
+          <li><a href="{% url 'account_login' %}"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+
+          <li><a href="{% url 'account_signup' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        {% endif %}   
+
+      </ul>
+    </div>
+  </nav>
+
+<body>
+
+  <!-- well -->
+ 
+ <div class="container">
+  <div class="well  vertical-center">
+     <!-- centering text via inline class... WILL CORRECT! -->
+    <h2 class="text-center">{{  jumbo_info  }}</h2> 
+    <h5 class="text-center"> Renaissance Providence Downtowwn Hotel</h5>
+    <p class="text-center">  5 Avenue of The Arts</p>
+    <p class="text-center"> Providence, RI 02903 </p>
+  </div> 
+</div>  
+
+  
+  <div class="row">
+    <div class="col-sm-2" "></div>
+
+    <div class="col-sm-8" ">
+   
+{% endif %}
+    {% block info-content %}{% endblock %}
+    
+    </div>
+        
+
+
+    <div class="col-sm-2" ></div>
+  </div>
+
+
+
+</body>
+
+</html>
