@@ -22,14 +22,16 @@ from django.contrib import admin
 from django.conf.urls import include
 # needed to establish view and template?
 import shifts.views
+# import views from today vs tommorow
+import todvstom.views
 
 
 urlpatterns = [
 	#added by me:
-    # # log in and Log out  ---commented out to config allauth
-    # # Login/Logout URLs and profile
-    # url('^accounts/', include('django.contrib.auth.urls')),
-    # url(r'^accounts/profile/', shifts.views.profile, name = 'profile'),
+    #Today vs Tommorow app
+    url(r'^room_sets', todvstom.views.room_sets, name = 'room_sets'),
+
+
 
 	#point root URLconf at shifts.urls module using imported include
 	url(r'^shifts/', include('shifts.urls')),

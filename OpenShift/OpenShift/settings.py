@@ -33,11 +33,11 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     #installed by me:
     'shifts.apps.ShiftsConfig',
+    'todvstom.apps.TodvstomConfig',
 
     # The following apps are required per allauth:
     
     'django.contrib.sites',
-
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
