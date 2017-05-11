@@ -32,6 +32,7 @@ def index(request):
         'shifts': shifts,
         'confirmed_by_user': confirmed_user,
         'nbar': '/',
+        'have_jumbo': 'yes',
         'jumbo_info': 'Available Shifts'
     })
 @login_required
@@ -41,6 +42,7 @@ def profile(request):
     return render(request,'profile.html',{
         #'shifts': shifts,
         'nbar': '/',
+        'have_jumbo': 'yes',
         'jumbo_info': 'Available Shifts'
     })
 
@@ -49,12 +51,14 @@ def profile(request):
 def parking_train(request):
 	return render(request, 'parking_train.html',{
 		'nbar': 'parking_train/',
+		'have_jumbo': 'yes',
 		})
 
 @login_required
 def hotel_location(request):
 	return render(request, 'hotel_location.html',{
 		'nbar': 'parking_train/',
+		'have_jumbo': 'yes',
 		'jumbo_info': 'Where to find the hotel'
 		})
 
@@ -62,6 +66,7 @@ def hotel_location(request):
 def parking(request):
 	return render(request, 'parking.html',{
 		'nbar': 'parking_train/',
+		'have_jumbo': 'yes',
 		'jumbo_info': 'Where to Park'
 		})
 
@@ -69,6 +74,7 @@ def parking(request):
 def train(request):
 	return render(request, 'train.html',{
 		'nbar': 'parking_train/',
+		'have_jumbo': 'yes',
 		'jumbo_info': 'Catch the Train'
 		})
 
@@ -87,6 +93,7 @@ def each_shift(request,shift_id):
 
 		return render(request, 'each_shift.html',{
 		'each_shift_db': each_shift_db,
+		'have_jumbo': 'yes',
 		'confirmed_by_user': confirmed_by_user,
 		'jumbo_info': 'confirm this shift'
 		})
@@ -121,6 +128,7 @@ def post_confirm(request, shift_id):
 		
 		return render(request, 'confirmed.html',{
 			'fill_db': fill_db,
+			'have_jumbo': 'yes',
 			'jumbo_info': 'This shift is Confirmed'
 			})
 
@@ -132,6 +140,7 @@ def blast_shifts(request):
 	unblasted_db = open_shift.objects.filter(is_sent = False, is_filled=False)
 	return render(request, 'blast_shifts.html',{
 		'nbar': 'blast_shifts',
+		'have_jumbo': 'yes',
 		'jumbo_info': 'Send out Emails',
 		'unblasted_db': unblasted_db,
 		})
@@ -162,7 +171,9 @@ def blast_confirm(request):
 
 	return render(request, 'blast_confirm.html',{
 		'nbar': 'blast_confirm',
+		'have_jumbo': 'yes',
 
 		
 		
 		})	
+

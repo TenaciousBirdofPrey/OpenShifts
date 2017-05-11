@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 
-class Rooms(models.Model):
+class Room(models.Model):
 	set_date = models.DateField(null=True,blank = True,verbose_name ='set date')
 	symph_a = models.TextField(max_length = 200,blank = True,verbose_name ='Symphony A')
 	symph_b = models.TextField(max_length = 200,blank = True,verbose_name ='Symphony b')

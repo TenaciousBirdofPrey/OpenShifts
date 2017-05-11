@@ -1,0 +1,72 @@
+
+{% extends 'base.html' %}
+{% block titel%} body_block {% endblock%}
+
+
+{% block info-content %}
+woop woop
+
+<!-- <table class = "table table-striped ">
+  <tr>
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Description</th>
+    <th>Attire</th>
+    <th>Click to Confirm</th>
+  </tr>
+
+  {% for shift in each_shift_db %}
+    <tr>
+      <td>{{ shift.date}} </td>
+      <td> {{ shift.start}}</td>
+      <td> {{ shift.end}}</td>
+      <td> {{ shift.description}}</td>
+      <td> {{ shift.attire}}</td>
+      <td> <form action = "post_url/{{shift.id}}" method="post" >
+        {% csrf_token %}
+        {{ form }}
+          <input type="submit" values ="Submit"/>
+        </form>
+      </td>
+    </tr>  
+  {% endfor%}
+
+
+  
+</table>
+
+<h1> Shifts confirmed by {{ user.get_full_name }} </h1>
+
+ <table class = "table table-striped ">
+  <tr>
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Description</th>
+    <th>Attire</th>
+    
+  </tr>
+
+  {% for shift in confirmed_by_user %}
+    <tr>
+      <td>{{ shift.date}}</a> </td>
+      <td> {{ shift.start}}</td>
+      <td> {{ shift.end}}</td>
+      <td> {{ shift.description}}</td>
+      <td> {{ shift.attire}}</td>
+       
+    </tr>  
+  {% endfor%}
+
+
+  
+</table> -->
+
+
+
+
+
+
+
+{% endblock  %}

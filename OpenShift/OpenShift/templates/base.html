@@ -35,6 +35,7 @@
 	    <ul class="nav navbar-nav">
 		{% if user.is_authenticated %}
 	      <li class="{% if nbar == '/' %}active{% endif %}"><a href="{% url 'index' %}">Available Shifts</a></li>
+	      <li class="{% if nbar == 'room_sets' %}active{% endif %}"><a href="{% url 'room_sets' %}">Room Sets</a></li>
 
 		 <!-- create shifts panel -->
 		 {% if perms.shifts.can_add_date %}
@@ -76,7 +77,9 @@
 	</nav>
 
 <body>
+
   <!-- well -->
+  {% if have_jumbo == 'yes' %}
  <div class="container">
   <div class="well  vertical-center">
      <!-- centering text via inline class... WILL CORRECT! -->
@@ -86,12 +89,13 @@
     <p class="text-center"> Providence, RI 02903 </p>
   </div> 
 </div>	
-
+{% endif %}
 	
   <div class="row">
     <div class="col-sm-2" "></div>
 
     <div class="col-sm-8" ">
+   
 
     {% block info-content %}{% endblock %}
     
