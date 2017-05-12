@@ -4,14 +4,7 @@ from django.db import models
 # Create your models here.
 
 field = """
-GROUP:
-
-CONTACT:
-
 TIME:
-
-TABLES:
-
 AV:
 
 """
