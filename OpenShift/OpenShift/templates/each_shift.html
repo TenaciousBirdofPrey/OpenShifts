@@ -4,6 +4,14 @@
 
 
 {% block info-content %}
+  
+
+
+  <div class="row">
+    <div class="col-sm-2" "></div>
+
+    <div class="col-sm-8" ">
+
 
 
 <table class = "table table-striped ">
@@ -13,7 +21,7 @@
     <th>End Time</th>
     <th>Description</th>
     <th>Attire</th>
-    <th>Click to Confirm</th>
+    <th>Submit to Confirm</th>
   </tr>
 
   {% for shift in each_shift_db %}
@@ -35,8 +43,8 @@
 
   
 </table>
-
-<h1> Shifts confirmed by {{ user.get_full_name }} </h1>
+<br><br>
+<h2> Shifts confirmed by {{ user.get_full_name }} </h2>
 
  <table class = "table table-striped ">
   <tr>

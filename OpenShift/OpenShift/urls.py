@@ -49,6 +49,7 @@ urlpatterns = [
     url(r'^parking/', shifts.views.parking, name = 'parking'),
     url(r'^train/', shifts.views.train, name = 'train'),
 
+
     #each_shift as url
     url(r'^shift/([0-9]+)', shifts.views.each_shift, name = 'each_shift'),
 
