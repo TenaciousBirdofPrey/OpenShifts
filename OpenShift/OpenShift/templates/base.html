@@ -5,7 +5,7 @@
 <head>
 	 <title>{% block title %}{% endblock %}</title>
 	 <!-- link to static file in shifts/static -->
-	 <link rel="stylesheet" type="text/css" href="{% static 'shifts/style.css' %}" />
+	 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
 
 	 <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -36,6 +36,7 @@
 		{% if user.is_authenticated %}
 	      <li class="{% if nbar == '/' %}active{% endif %}"><a href="{% url 'index' %}">Available Shifts</a></li>
 	      <li class="{% if nbar == 'room_sets' %}active{% endif %}"><a href="{% url 'room_sets' %}">Room Sets</a></li>
+	      <li class="{% if nbar == 'seven_day' %}active{% endif %}"><a href="{% url 'seven_day' %}">seven day view</a></li>
 
 		 <!-- create shifts panel -->
 		 {% if perms.shifts.can_add_date %}

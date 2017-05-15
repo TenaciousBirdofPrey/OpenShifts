@@ -1,0 +1,30 @@
+# this is null in local settings
+ALLOWED_HOSTS = ['shifts3571.pythonanywhere.com']
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+#add new apps to installed apps as they are finished
+
+|	#locating templates in hosted
+|	'DIRS': ['OpenShifts/OpenShift/OpenShift/templates'],
+|
+|	#locating templates in local
+|	'DIRS': ['OpenShift/templates'],
+
+#python anywhere deployment
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+#end python anywhere
+
+         --below is added to config all auth
+|	#add user first and last name per all auth
+|	ACCOUNT_SIGNUP_FORM_CLASS = 'shifts.forms.SignupForm'
+|	# allauth sign by email
+|	ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+|	ACCOUNT_EMAIL_REQUIRED =True
+
+
+
+also need to:
+1. Update URLS.py

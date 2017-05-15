@@ -3,11 +3,9 @@ from django.db import models
 
 # Create your models here.
 
-field = """
-TIME:
-AV:
+field = 'not in use'
 
-"""
+
 
 class Room(models.Model):
 	set_date = models.DateField(unique = True,null=True,blank = True,verbose_name ='set date')
