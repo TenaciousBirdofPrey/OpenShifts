@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     #installed by me:
     'shifts.apps.ShiftsConfig',
     'todvstom.apps.TodvstomConfig',
+    # datetime
+    
 
     # The following apps are required per allauth:
     

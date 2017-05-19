@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block info-content %}
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'todvstom_style.css' %}" />
+
+<div>
+<form action = "" method = "post">{% csrf_token %}
+{{form}}
+<input type="submit" value = "save"/>
+</form>
+</div>
+
+<!-- {% for one in one_set %}
+{% for two in two_set %}
+{% for three in three_set %}
+{% for four in four_set %}
+{% for five in five_set %}
+{% for six in six_set %}
+{% for seven in seven_set %}
+
+<div class="scrollmenu">
+
+<table class="table table-bordered .table-hover">
+    <thead>
+      <tr>
+        <th>Room</th>
+        <th>{{one_date_is}}</th>
+        <th>{{two_date_is}}</th>
+        <th>{{three_date_is}}</th>
+        <th>{{four_date_is}}</th>
+        <th>{{five_date_is}}</th>
+        <th>{{six_date_is}}</th>
+        <th>{{seven_date_is}}</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>Symphony A</td>
+        <td>{{one.symph_a|linebreaks}}</td>
+        <td>{{two.symph_a|linebreaks}}</td>
+        <td>{{three.symph_a|linebreaks}}</td>
+        <td>{{four.symph_a|linebreaks}}</td>
+        <td>{{five.symph_a|linebreaks}}</td>
+        <td>{{six.symph_a|linebreaks}}</td>
+        <td>{{seven.symph_a|linebreaks}}</td>
+       </tr>
+
+      <tr>
+        <td>Symphony B</td>
+        <td>{{one.symph_b|linebreaks}}</td>
+        <td>{{two.symph_b|linebreaks}}</td>
+        <td>{{three.symph_b|linebreaks}}</td>
+        <td>{{four.symph_b|linebreaks}}</td>
+        <td>{{five.symph_b|linebreaks}}</td>
+        <td>{{six.symph_b|linebreaks}}</td>
+        <td>{{seven.symph_b|linebreaks}}</td>
+       </tr> 
+
+      <tr>
+        <td>Ballroom</td>
+        <td>{{one.ballroom|linebreaks}}</td>
+        <td>{{two.ballroom|linebreaks}}</td>
+        <td>{{three.ballroom|linebreaks}}</td>
+        <td>{{four.ballroom|linebreaks}}</td>
+        <td>{{five.ballroom|linebreaks}}</td>
+        <td>{{six.ballroom|linebreaks}}</td>
+        <td>{{seven.ballroom|linebreaks}}</td>
+       </tr>  
+
+
+      <tr>
+        <td>Beethoven</td>
+        <td>{{one.beethoven|linebreaks}}</td>
+        <td>{{two.beethoven|linebreaks}}</td>
+        <td>{{three.beethoven|linebreaks}}</td>
+        <td>{{four.beethoven|linebreaks}}</td>
+        <td>{{five.beethoven|linebreaks}}</td>
+        <td>{{six.beethoven|linebreaks}}</td>
+        <td>{{seven.beethoven|linebreaks}}</td>
+       </tr>
+
+      <tr>
+        <td>Mozart</td>
+        <td>{{one.mozart|linebreaks}}</td>
+        <td>{{two.mozart|linebreaks}}</td>
+        <td>{{three.mozart|linebreaks}}</td>
+        <td>{{four.mozart|linebreaks}}</td>
+        <td>{{five.mozart|linebreaks}}</td>
+        <td>{{six.mozart|linebreaks}}</td>
+        <td>{{seven.mozart|linebreaks}}</td>
+       </tr>
+
+      <tr>
+        <td>Haydn</td>
+        <td>{{one.haydn|linebreaks}}</td>
+        <td>{{two.haydn|linebreaks}}</td>
+        <td>{{three.haydn|linebreaks}}</td>
+        <td>{{four.haydn|linebreaks}}</td>
+        <td>{{five.haydn|linebreaks}}</td>
+        <td>{{six.haydn|linebreaks}}</td>
+        <td>{{seven.haydn|linebreaks}}</td>
+       </tr>
+
+      <tr>
+        <td>Handel</td>
+        <td>{{one.handel|linebreaks}}</td>
+        <td>{{two.handel|linebreaks}}</td>
+        <td>{{three.handel|linebreaks}}</td>
+        <td>{{four.handel|linebreaks}}</td>
+        <td>{{five.handel|linebreaks}}</td>
+        <td>{{six.handel|linebreaks}}</td>
+        <td>{{seven.handel|linebreaks}}</td>
+       </tr>
+
+
+      <tr>
+        <td>Boardroom</td>
+        <td>{{one.board|linebreaks}}</td>
+        <td>{{two.board|linebreaks}}</td>
+        <td>{{three.board|linebreaks}}</td>
+        <td>{{four.board|linebreaks}}</td>
+        <td>{{five.board|linebreaks}}</td>
+        <td>{{six.board|linebreaks}}</td>
+        <td>{{seven.board|linebreaks}}</td>
+       </tr>       
+
+
+      <tr>
+        <td>Capitol</td>
+        <td>{{one.capitol|linebreaks}}</td>
+        <td>{{two.capitol|linebreaks}}</td>
+        <td>{{three.capitol|linebreaks}}</td>
+        <td>{{four.capitol|linebreaks}}</td>
+        <td>{{five.capitol|linebreaks}}</td>
+        <td>{{six.capitol|linebreaks}}</td>
+        <td>{{seven.capitol|linebreaks}}</td>
+       </tr>
+
+
+      <tr>
+        <td>33rd</td>
+        <td>{{one.thirty_third|linebreaks}}</td>
+        <td>{{two.thirty_third|linebreaks}}</td>
+        <td>{{three.thirty_third|linebreaks}}</td>
+        <td>{{four.thirty_third|linebreaks}}</td>
+        <td>{{five.thirty_third|linebreaks}}</td>
+        <td>{{six.thirty_third|linebreaks}}</td>
+        <td>{{seven.thirty_third|linebreaks}}</td>
+       </tr>
+              
+
+      <tr>
+        <td>Other</td>
+        <td>{{one.other|linebreaks}}</td>
+        <td>{{two.other|linebreaks}}</td>
+        <td>{{three.other|linebreaks}}</td>
+        <td>{{four.other|linebreaks}}</td>
+        <td>{{five.other|linebreaks}}</td>
+        <td>{{six.other|linebreaks}}</td>
+        <td>{{seven.other|linebreaks}}</td>
+       </tr>
+
+
+    </tbody>
+  </table>
+
+
+
+
+</div>
+     
+
+{% endfor%} 
+{% endfor%} 
+{% endfor%} 
+{% endfor%}  
+{% endfor%}
+{% endfor%}  
+{% endfor%}     
+ -->
+
+
+{% endblock  %}

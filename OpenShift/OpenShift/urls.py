@@ -30,7 +30,10 @@ urlpatterns = [
 	#added by me:
     #Today vs Tommorow app
     url(r'^room_sets', todvstom.views.room_sets, name = 'room_sets'),
-    url(r'^seven_day', todvstom.views.seven_day, name = 'seven_day'),
+    url(r'^seven_day/', todvstom.views.seven_day, name = 'seven_day'),
+    url(r'^seven_day_pick/', todvstom.views.seven_day_pick, name = 'seven_day_pick'),
+    
+
 
 
 

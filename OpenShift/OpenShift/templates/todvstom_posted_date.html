@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block titel%} body_block {% endblock%}
+
+
+{% block info-content %}
+
+
+
+
+<form action = '' method="post" >
+        {% csrf_token %}
+        {{ form }}
+          <input type="date" name = "get_date"/>
+          <input type="Submit" values ="Slubmit"/>
+        </form>
+
+
+</html>
+
+    
+    
+     
+
+        
+
+
+
+{% endblock  %}

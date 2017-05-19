@@ -28,3 +28,9 @@ http://stackoverflow.com/questions/26368306/export-is-not-recognized-as-an-inter
 
 #all auth - adding user first and last name.
 http://stackoverflow.com/questions/12303478/how-to-customize-user-profile-when-using-django-allauth
+
+#sDATETIME PICKER-FUCK TOOK FOREVER
+http://stackoverflow.com/questions/3367091/whats-the-cleanest-simplest-to-get-running-datepicker-in-django/35968816#35968816
+
+forms
+https://www.youtube.com/watch?v=KRanyK02uO8

@@ -9,6 +9,8 @@ from django.http import HttpResponse
 import time
 import datetime
 from datetime import timedelta,date
+from .forms import RoomForm
+
 
 
 @login_required
@@ -50,6 +52,9 @@ def room_sets(request):
 
 @login_required
 def seven_day(request):
+
+	
+
 	#get the 7 dates to be viewed	
 	one_date_is =  date.today()#.strftime("%Y-%m-%d")
 	two_date_is = date.today() + timedelta(1)	
@@ -68,7 +73,11 @@ def seven_day(request):
 	six_set = Room.objects.filter(set_date = six_date_is.strftime("%Y-%m-%d"))
 	seven_set = Room.objects.filter(set_date = seven_date_is.strftime("%Y-%m-%d"))
 
-	return render(request,'seven_day_inner.html',{ 
+	return render(request,'seven_day_inner.html',{
+
+
+
+
 		#pass the dates
 		'one_date_is':one_date_is,
 		'two_date_is': two_date_is,
@@ -91,4 +100,42 @@ def seven_day(request):
         'nbar': 'seven_day',
         'have_jumbo': 'no',
         'jumbo_info': 'seven_day'
+    })
+
+
+@login_required
+def seven_day_pick(request):
+	form = RoomForm(request.POST)
+# Uncomment and run to bulk add to Room DB
+	# today =  date.today()#.strftime("%Y-%m-%d")
+	# for e in range(45):
+	# 	add_date = date.today() + timedelta(e)
+	# 	row = Room(set_date = add_date)
+	# 	row.save()
+	if request.method == "POST":
+		print(request.POST)
+		print('---------------')
+		print(request.POST['set_date'])
+		print('---------------')
+		if form.is_valid():
+			Room.objects.update_or_create(set_date = request.POST['set_date'])
+
+		
+
+		return render(request,'seven_day_pick_inner.html',{
+
+			'form':form,
+	        # template stuff
+	        'nbar': 'seven_day',
+	        'have_jumbo': 'no',
+	        'jumbo_info': 'seven_day'})
+	else:
+		return render(request,'seven_day_pick_inner.html',{
+
+				'form':form,
+		        # template stuff
+		        'nbar': 'seven_day',
+		        'have_jumbo': 'no',
+		        'jumbo_info': 'seven_day'
+
     })
